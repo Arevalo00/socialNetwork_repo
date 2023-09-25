@@ -4,8 +4,11 @@ const reactionSchema = require('./reaction');
 
 const thoughtSchema = new Schema({
     thoughtText: {type: String, require: true},
+
     createdAt: { type: Date, default: Date.now, get: (timeStamp)=> timeStamp.toLocaleDateString()},
+
     username: { type: String, require: true},
+    
    reactions:[
         reactionSchema
    ]
